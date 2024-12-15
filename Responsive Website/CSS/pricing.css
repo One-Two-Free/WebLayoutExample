@@ -1,0 +1,351 @@
+/* Custom Scrollbar */
+body::-webkit-scrollbar-thumb {
+  background: linear-gradient(#1d4fb3, #538cfd);
+}
+/* End of Custom Scrollbar */
+
+/* Pricing */
+.pricing {
+  width: 100%;
+  height: 150vh;
+  margin-top: 30rem;
+}
+
+.pricing-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.pricing-rectangle {
+  width: 50rem;
+  height: 50rem;
+  background: linear-gradient(135deg, #184fbb, transparent 80%);
+  border-radius: 10rem;
+  position: absolute;
+  top: 30%;
+  left: 15%;
+  transform: rotateZ(45deg);
+  opacity: 0.2;
+}
+
+.pricing-small-circle {
+  width: 8rem;
+  height: 8rem;
+  background-color: #34dd87;
+  border-radius: 50%;
+  position: absolute;
+  top: 25%;
+  right: 15%;
+}
+
+.pricing-large-circle {
+  width: 40rem;
+  height: 40rem;
+  background: linear-gradient(to right, transparent, #7118d6 90%);
+  border-radius: 50%;
+  position: absolute;
+  bottom: 15%;
+  right: 15%;
+  opacity: 0.2;
+}
+
+.pricing-header {
+  text-align: center;
+  margin-bottom: 20rem;
+}
+
+.pricing-header h1 {
+  font-family: 'Mooli', cursive;
+  font-size: 5rem;
+  letter-spacing: 0.2rem;
+  color: #263b53;
+}
+
+.pricing-header h3 {
+  font-size: 2rem;
+  font-weight: 300;
+  color: #567599;
+  width: 80rem;
+  margin: 2rem auto;
+}
+
+.pricing-header p {
+  font-size: 2rem;
+  font-weight: 300;
+  margin-right: 1rem;
+}
+
+.reviews {
+  display: flex;
+  justify-content: center;
+}
+
+.pricing-stars {
+  margin-right: 1rem;
+}
+
+.pricing-stars span {
+  font-size: 2.5rem;
+  color: #03b57f;
+}
+
+.pricing-trustpilot {
+  display: flex;
+  align-items: center;
+  margin-top: -0.5rem;
+}
+
+.pricing-trustpilot span:nth-child(1) {
+  font-size: 3.5rem;
+  color: #03b57f;
+}
+
+.pricing-trustpilot span:nth-child(2) {
+  font-size: 2rem;
+}
+
+.pricing-cards {
+  display: flex;
+  perspective: 50rem;
+}
+
+.pricing-card {
+  width: 45rem;
+  height: 70rem;
+  background-color: #fff;
+  box-shadow: 0 1rem 10rem rgba(130, 162, 235, 0.4);
+  z-index: 10;
+  margin: 0 1.5rem;
+  padding: 4rem 6rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.pricing-card-right {
+  transform: translateZ(5rem);
+}
+
+.pricing-card-top h3 {
+  font-family: 'Mooli', cursive;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  margin-bottom: 2rem;
+}
+
+.pricing-card-left .pricing-card-top h3,
+.pricing-card-left .pricing-card-top h1 {
+  background: linear-gradient(to right, #44a1fd, #0b3fa8 90%);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.pricing-card-right .pricing-card-top h3,
+.pricing-card-right .pricing-card-top h1 {
+  background: linear-gradient(to right, #ca6eff, #7118d6 90%);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.pricing-card-top h1 {
+  font-family: 'Mooli', cursive;
+  font-size: 6rem;
+  letter-spacing: 0.2rem;
+  margin-bottom: 2rem;
+}
+
+.pricing-card-stars {
+  margin-bottom: 4rem;
+}
+
+.pricing-card-stars span {
+  color: #03b57f;
+}
+
+.pricing-card-list {
+  list-style: none;
+  margin-bottom: 4rem;
+}
+
+.pricing-card-list li {
+  font-size: 2rem;
+  font-weight: 300;
+  color: #567599;
+  margin: 1.5rem 0;
+}
+
+.pricing-card-list li:nth-child(5) {
+  color: #03b57f;
+}
+
+.pricing-card-left .pricing-card-list li:last-child {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.pricing-card-btn {
+  width: 100%;
+  height: 6rem;
+  border: none;
+  border-radius: 5rem;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  color: #fff;
+  letter-spacing: 0.2rem;
+  cursor: pointer;
+}
+
+.pricing-card-left .pricing-card-btn {
+  background: linear-gradient(to right, #44a1fd, #0b3fa8 90%);
+}
+
+.pricing-card-right .pricing-card-btn {
+  background: linear-gradient(to right, #ca6eff, #7118d6 90%);
+}
+/* End of Pricing */
+
+/* Responsive */
+@media (max-width: 1600px) {
+  .pricing-small-circle {
+    right: 10%;
+  }
+
+  .pricing-large-circle {
+    right: 10%;
+    bottom: 12%;
+  }
+}
+
+@media (max-width: 1440px) {
+  .pricing-small-circle {
+    right: 7%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .pricing-card {
+    width: 40rem;
+  }
+
+  .pricing-rectangle {
+    top: 28%;
+    left: 5%;
+    width: 40rem;
+    height: 40rem;
+  }
+
+  .pricing-large-circle {
+    bottom: 10%;
+    right: 5%;
+    width: 30rem;
+    height: 30rem;
+  }
+
+  .pricing-small-circle {
+    top: 26%;
+    right: 5%;
+    width: 6rem;
+    height: 6rem;
+  }
+}
+
+@media (max-width: 820px) {
+  .pricing {
+    height: 120vh;
+  }
+
+  .pricing-rectangle {
+    left: -3%;
+    top: 25%;
+  }
+
+  .pricing-small-circle {
+    width: 6rem;
+    height: 6rem;
+    top: 25%;
+    right: 1%;
+  }
+
+  .pricing-large-circle {
+    width: 40rem;
+    height: 40rem;
+    bottom: 25%;
+    right: -5%;
+  }
+
+  .pricing-header {
+    width: 80rem;
+  }
+
+  .pricing-cards {
+    perspective: none;
+  }
+
+  .pricing-card-right {
+    transform: translateZ(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .pricing-rectangle {
+    top: 30%;
+    left: -6%;
+  }
+
+  .pricing-large-circle {
+    bottom: 12%;
+  }
+}
+
+@media (max-width: 430px) {
+  .pricing {
+    height: 180vh;
+  }
+
+  .pricing-header h1 {
+    font-size: 4rem;
+    width: 50rem;
+    margin: auto;
+  }
+
+  .pricing-header h3 {
+    font-size: 2rem;
+    width: 50rem;
+    margin: 2rem auto;
+  }
+
+  .pricing-rectangle {
+    top: 20%;
+  }
+
+  .pricing-small-circle {
+    top: 17%;
+    right: 5%;
+  }
+
+  .pricing-large-circle {
+    bottom: 8%;
+  }
+
+  .pricing-cards {
+    flex-direction: column;
+  }
+
+  .pricing-card {
+    margin: 0 1.5rem 10rem 1.5rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .pricing {
+    height: 250vh;
+  }
+}
+/* End of Responsive */
