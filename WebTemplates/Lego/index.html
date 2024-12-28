@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <div style="background-color: #f6f6f6 !important;" id="topbar">
+      <div class="container">
+          <div class="d-flex justify-content-between align-items-center py-3">
+              <button class="btn-1 d-none d-lg-block">
+                  <ion-icon class="me-2" name="arrow-back-outline"></ion-icon>
+                  <strong>PLAY ZONE</strong>
+              </button>
+              <div class="swiper mySwiper" style="max-width: 500px;">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide fs-0-8">
+                    Spring Garden House gift with purchases of $80 or more*
+                    <a href="www.google.com">Learn more</a>
+                  </div>
+                  <div class="swiper-slide fs-0-8">
+                    Sweet bunny gift with purchases of $40 or more*
+                    <a href="www.google.com">Learn more</a>
+                  </div>
+                  <div class="swiper-slide fs-0-8">
+                    Sweet bunny gift with purchases of $40 or more*
+                    <a href="www.google.com">Learn more</a>
+                  </div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+              </div>
+              <div class="d-none d-lg-block">
+                <div class="d-flex">
+                  <div class="fs-0-8 d-flex align-items-center me-3">
+                    <img style="width: 15px;" class="me-2" src="assets/icons/icon-1.svg" alt="">
+                    <strong class="d-none d-xl-block">Sign In</strong>
+                  </div>
+                  <span class="me-3">|</span>
+                  <div class="fs-0-8 d-flex align-items-center">
+                    <img style="width: 15px;" class="me-2" src="assets/icons/icon-2.svg" alt="">
+                    <strong class="d-none d-xl-block">Join LEGO® Insiders</strong>
+                  </div>
+                </div>
+              </div>
+              <div class="d-lg-none d-flex align-items-center">
+                <ion-icon name="close-outline" style="font-size: 1.8rem !important;cursor: pointer;" onclick="closeTopbar()"></ion-icon>
+              </div>
+          </div>
+      </div>
+    </div>
+    <nav class="navbar navbar-expand-lg bg-yellow">
+        <div class="container">
+          <div class="d-flex align-items-center">
+            <button id="btnRs" onclick="animateBars()" class="navbar-toggler me-4" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="icon-bar-1"></span>
+              <span class="icon-bar-2"></span>
+              <span class="icon-bar-3"></span>
+
+              <small>MENU</small>
+            </button>
+
+            <a class="navbar-brand me-5" href="#">
+              <img src="./assets/brand-lego.svg" alt="" style="width: 50px;height: 50px;">
+            </a>
+          </div>
+
+          <div class="d-xs-block d-sm-block d-md-block d-lg-none d-xl-none d-xxl-none">
+            <div class="d-flex">
+              <a class="btn-search me-3" id="btnSearchRS" onclick="openSearchRS()">
+                <img src="assets/icons/icon-3.svg" alt="" style="width: 18px;height: 18px;">
+              </a>
+              <div class="input-group me-3 d-none" id="inpSearchRS">
+                
+                <input style="z-index: 1;" type="text" id="inputSearch" class="form-control postition-relative" aria-label="Amount (to the nearest dollar)">
+                <div style="z-index: 1;" class="position-absolute btn-prev h-100 d-flex align-items-center">
+                  <ion-icon name="search-outline" style="font-size: 20px;"> </ion-icon>
+                </div>
+                <div style="z-index: 1;" class="position-absolute btn-next h-100 d-flex align-items-center" onclick="openSearchRS()">
+                  <ion-icon name="close-outline" style="font-size: 25px;"></ion-icon>
+                </div>
+              </div>
+              <a href="" class="me-3 d-flex align-items-center">
+                <img src="assets/icons/icon-1.svg" alt="" style="width: 22px;height: 22px;">
+              </a>
+              <a href="" class="me-3 d-flex align-items-center">
+                <img src="assets/icons/icon-4.svg" alt="" style="width: 18px;height: 18px;">
+              </a>
+              <a href="" class="d-flex align-items-center">
+                <img src="assets/icons/icon-5.svg" alt="" style="width: 18px;height: 18px;">
+              </a>
+            </div>
+          </div>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item me-4">
+                <a class="nav-link active" href="#">
+                  <strong>SHOP</strong>
+                </a>
+              </li>
+              <li class="nav-item me-4">
+                <a class="nav-link active" href="#">
+                  <strong>DISCOVER</strong>
+                </a>
+              </li>
+              <li class="nav-item me-4">
+                <a class="nav-link active" href="#">
+                  <strong>HELP</strong>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="btn-2" href="#">
+                  <strong>EASTER</strong>
+                </a>
+              </li>
+            </ul>
+            <div class="d-flex">
+              <a class="btn-search me-4" id="btnSearch" onclick="openSearch()">
+                <img src="assets/icons/icon-3.svg" alt="" style="width: 18px;height: 18px;">
+              </a>
+              <div class="input-group me-4 d-none" id="inpSearch">
+                
+                <input style="z-index: 1;" type="text" id="inputSearch" class="form-control postition-relative" aria-label="Amount (to the nearest dollar)">
+                <div style="z-index: 1;" class="position-absolute btn-prev h-100 d-flex align-items-center">
+                  <ion-icon name="search-outline" style="font-size: 20px;"> </ion-icon>
+                </div>
+                <div style="z-index: 1;" class="position-absolute btn-next h-100 d-flex align-items-center" onclick="openSearch()">
+                  <ion-icon name="close-outline" style="font-size: 25px;"></ion-icon>
+                </div>
+              </div>
+
+
+              <a href="" class="me-3 d-flex align-items-center">
+                <img src="assets/icons/icon-4.svg" alt="" style="width: 18px;height: 18px;">
+              </a>
+              <a href="" class="d-flex align-items-center">
+                <img src="assets/icons/icon-5.svg" alt="" style="width: 18px;height: 18px;">
+              </a>
+            </div>
+          </div>
+        </div>
+    </nav>
+    <!-- HEADER -->
+
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+      <div class="offcanvas-header border-bottom-yellow">
+        <h6 class="offcanvas-title p-1rem" id="offcanvasExampleLabel">
+          <strong>MENU</strong>
+        </h6>
+        <button type="button" class="btn-close p-1rem" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body" style="flex-grow: inherit !important;">
+        <button class="btn-1 mb-3 w-100 d-flex justify-content-center" 
+        style="font-size: .8rem !important;background-color: #abd9ff !important;padding: 0.7rem !important;">
+            <ion-icon class="me-2" name="arrow-back-outline"></ion-icon>
+            <strong>PLAY ZONE</strong>
+        </button>
+      </div>
+      <ul class="list-group" style="border-radius: 0px;">
+        <li class="list-group-item" style="border-top: 0px;color: #bc0e0e;">
+          EASTER
+        </li>
+        <li class="list-group-item">HOME</li>
+        <li class="list-group-item">SHOP</li>
+        <li class="list-group-item">DISCOVER</li>
+        <li class="list-group-item">HELP</li>
+        <li class="list-group-item">
+          <img src="assets/icons/icon-1.svg" style="width: 20px;" class="me-3">
+          Sign In
+        </li>
+        <li class="list-group-item">
+          <img src="assets/icons/icon-2.svg" style="width: 20px;" class="me-3">
+          Join LEGO® Insiders
+        </li>
+        <li class="list-group-item">My Wishlist</li>
+        <li class="list-group-item">My Bag</li>
+        <li class="list-group-item">
+          <ion-icon class="me-3" name="location-outline"></ion-icon>
+          United States
+        </li>
+      </ul>
+    </div>
+
+    <main>
+      <!-- FIRST SECTION -->
+      <section>
+        <div class="container w-mx-1300">
+          <div class="row position-relative">
+            <div class="col-lg-12 position-relative">
+              <img src="./assets/home/back-full.webp" class="w-100" alt="">
+            </div>
+            <div id="promo-container" class="col-lg-3  d-flex align-items-center justify-content-center flex-column position-absolute"
+            style="left: 50%;top: 50%;transform: translate(-50%,-50%);">
+              <h1 class="ls-1px"><strong>Easter Sale</strong></h1>
+              <span class="py-3 text-center fs-1-1">
+                Fill your basket with savings on <br> selected LEGO® sets, 3/12-3/21.*
+              </span>
+              <button class="btn-3">
+                <span class="me-2"><strong>Shop Now</strong></span>
+                <ion-icon name="chevron-forward-outline" style="font-size: 1.4rem !important;"></ion-icon>
+              </button>
+            </div>
+          </div>
+          <div class="row bg-yellow mx-0">
+            <div class="col-lg-12 py-4 d-flex justify-content-center">
+              <ul class="list-inline d-flex justify-content-center gap-3" style="flex-wrap: wrap !important;">
+                <li class="d-flex flex-column">
+                  <img class="mb-2" src="assets/home/home-1.webp" alt="">
+                  <small class="text-center fs-075">
+                    <b>New</b>
+                  </small>
+                </li>
+                <li class="d-flex flex-column w-mx-150px">
+                  <img class="mb-2" src="assets/home/home-2.webp" alt="">
+                  <small class="text-center fs-075">
+                    <b>Exclusives</b>
+                  </small>
+                </li>
+                <li class="d-flex flex-column w-mx-150px">
+                  <img class="mb-2" src="assets/home/home-3.webp" alt="">
+                  <small class="text-center fs-075">
+                    <b>Offers</b>
+                  </small>
+                </li>
+                <li class="d-flex flex-column w-mx-150px">
+                  <img class="mb-2" src="assets/home/home-4.webp" alt="">
+                  <small class="text-center fs-075">
+                    <b>Bestsellers</b>
+                  </small>
+                </li>
+                <li class="d-flex flex-column w-mx-150px">
+                  <img class="mb-2" src="assets/home/home-5.webp" alt="">
+                  <small class="text-center fs-075">
+                    <b>Star Wars™</b>
+                  </small>
+                </li>
+                <li class="d-flex flex-column w-mx-150px">
+                  <img class="mb-2" src="assets/home/home-6.webp" alt="">
+                  <small class="text-center fs-075">
+                    <b>LEGO® Icons</b>
+                  </small>
+                </li>
+                <li class="d-flex flex-column w-mx-150px">
+                  <img class="mb-2" src="assets/home/home-7.webp" alt="">
+                  <small class="text-center fs-075">
+                    <b>Gift finder</b>
+                  </small>
+                </li>
+                <li class="d-flex flex-column w-mx-150px">
+                  <img class="mb-2" src="assets/home/home-8.webp" alt="">
+                  <small class="text-center fs-075">
+                    <b>LEGO® Insiders</b>
+                  </small>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- FIRST SECTION -->
+      <!-- SECOND SECTION -->
+      <section class="py-7">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 mb-3">
+              <h2 class="text-black fw-900">This week's top picks</h2>
+            </div>
+
+            <div class="col-12">
+              <div class="swiper swiper-container" id="slider2">
+                <div class="swiper-wrapper mb-4">
+                  <div class="swiper-slide" style="max-width: 400px;">
+                    <div class="card border-none">
+                      <img src="./assets/home/banner-1.webp" alt="" class="w-100">
+                      <div class="card-body d-flex justify-content-center align-items-center flex-column">
+                        <h5 class="text-center fw-900 text-black">Engage in a thrilling galactic chase</h5>
+                        <small class="my-3 text-center">Engage in a thrilling galactic chaseNew LEGO® Star Wars™.</small>
+                        <a class="fw-900 text-black d-flex align-items-center" 
+                        style="text-decoration: none !important;">
+                          <span class="me-2" style="font-size: .9rem !important;">Shop Now</span>
+                          <ion-icon name="chevron-forward-outline" style="font-size: 1.4rem !important;"></ion-icon>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide" style="max-width: 400px;">
+                    <div class="card border-none">
+                      <img src="./assets/home/banner-2.webp" alt="" class="w-100">
+                      <div class="card-body d-flex justify-content-center align-items-center flex-column">
+                        <h5 class="text-center fw-900 text-black">Engage in a thrilling galactic chase</h5>
+                        <small class="my-3 text-center">Engage in a thrilling galactic chaseNew LEGO® Star Wars™.</small>
+                        <a class="fw-900 text-black d-flex align-items-center" 
+                        style="text-decoration: none !important;">
+                          <span class="me-2" style="font-size: .9rem !important;">Shop Now</span>
+                          <ion-icon name="chevron-forward-outline" style="font-size: 1.4rem !important;"></ion-icon>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide" style="max-width: 400px;">
+                    <div class="card border-none">
+                      <img src="./assets/home/banner-3.webp" alt="" class="w-100">
+                      <div class="card-body d-flex justify-content-center align-items-center flex-column">
+                        <h5 class="text-center fw-900 text-black">Engage in a thrilling galactic chase</h5>
+                        <small class="my-3 text-center">Engage in a thrilling galactic chaseNew LEGO® Star Wars™.</small>
+                        <a class="fw-900 text-black d-flex align-items-center" 
+                        style="text-decoration: none !important;">
+                          <span class="me-2" style="font-size: .9rem !important;">Shop Now</span>
+                          <ion-icon name="chevron-forward-outline" style="font-size: 1.4rem !important;"></ion-icon>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-scrollbar" style="height: 5px !important;border-radius: 0px;">
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+      <!-- SECOND SECTION -->
+      <!-- THIRD SECTION -->
+      <section class="pb-7">
+        <div class="container">
+          <div class="row bg-navy" style="padding: 30px !important;">
+            <div class="col-lg-3 d-flex align-items-center" id="title-gift">
+              <div>
+                <h3 class="text-white ff-cera-pro-bold">Gifts with Purchase</h3>
+                <button class="btn-4">Shop Now</button>
+              </div>
+            </div>
+            <div class="col-lg-9">
+              <div class="swiper swiper-container" id="slider3">
+                <div class="swiper-wrapper mb-4">
+                  <div class="swiper-slide" style="max-width: 450px;">
+                    <div class="card border-none" style="background-color: #ffffff2b !important;">
+                      <div class="card-body d-flex">
+                        <img src="assets/home/gift-1.webp" alt="" class="me-5">
+                        <div>
+                          <article class="text-white d-flex align-items-center mb-3">
+                            <ion-icon class="me-2" name="gift-outline"></ion-icon>
+                            <span class="fw-900" style="font-size: .8rem;">Gift with Purchase</span>
+                          </article>
+                         
+                          <p class="mb-0 text-white fw-900">Spring Garden House</p>
+                          <small class="text-white">With purchases of $80 and over.*</small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide" style="max-width: 450px;">
+                    <div class="card border-none" style="background-color: #ffffff2b !important;">
+                      <div class="card-body d-flex">
+                        <img src="assets/home/gift-2.webp" alt="" class="me-5">
+                        <div>
+                          <article class="text-white d-flex align-items-center mb-3">
+                            <ion-icon class="me-2" name="gift-outline"></ion-icon>
+                            <span class="fw-900" style="font-size: .8rem;">Gift with Purchase</span>
+                          </article>
+                         
+                          <p class="mb-0 text-white fw-900">Spring Garden House</p>
+                          <small class="text-white">With purchases of $80 and over.*</small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-scrollbar-3" style="height: 5px !important;border-radius: 0px;">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- THIRD SECTION -->
+      <!-- FOURTH  SECTION -->
+      <section class="pb-7">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 mb-3">
+              <h2 class="text-black fw-900">What others are buying</h2>
+            </div>
+
+            <div class="col-12">
+              <div class="swiper swiper-container" id="slider4">
+                <div class="swiper-wrapper mb-5">
+                  <div class="swiper-slide" style="max-width: 300px;">
+                    <div class="card mb-4" style="border-radius: 0px;">
+                      <div class="card-header bg-white border-bottom-none pt-3">
+                        <button class="btn-hearth d-flex justify-content-center align-items-center">
+                          <ion-icon name="heart-outline" style="color: #1f7ebf !important;"></ion-icon>
+                        </button>
+                      </div>
+                      <div class="card-body h-230px card-img">
+                        <img src="./assets/home/product-1.webp" alt="" class="w-100">
+                      </div>
+                      <div class="card-header bg-white d-flex justify-content-start pb-3">
+                        <span class="badge text-bg-warning">Warning</span>
+                      </div>
+                    </div>
+                    <div class="d-flex flex-column justify-content-start">
+                      <h6 class="fw-900 text-black text-start mb-3">2023 McLaren Formula 1 Race Car</h6>
+                      <div class="d-flex justify-content-start mb-3">
+                        <img src="assets/home/star.svg" style="width: 15px;">
+                        <img src="assets/home/star.svg" style="width: 15px;">
+                        <img src="assets/home/star.svg" style="width: 15px;">
+                        <img src="assets/home/star.svg" style="width: 15px;">
+                        <img src="assets/home/star.svg" style="width: 15px;">
+                      </div>
+                      <span class="text-start text-black ff-cera-pro-bold mb-3">USD 26.05</span>
+                      <button class="btn-5 text-center">Add to bag</button>
+                    </div>
+                    
+                  </div>
+                  <div class="swiper-slide" style="max-width: 300px;">
+                    <div class="card mb-4" style="border-radius: 0px;">
+                      <div class="card-header bg-white border-bottom-none pt-3">
+                        <button class="btn-hearth d-flex justify-content-center align-items-center">
+                          <ion-icon name="heart-outline" style="color: #1f7ebf !important;"></ion-icon>
+                        </button>
+                      </div>
+                      <div class="card-body h-230px card-img">
+                        <img src="./assets/home/product-2.webp" alt="" class="w-100">
+                      </div>
+                      <div class="card-header bg-white d-flex justify-content-start pb-3">
+                        <span class="badge text-bg-warning">Warning</span>
+                      </div>
+                    </div>
+                    <div class="d-flex flex-column justify-content-start">
+                      <h6 class="fw-900 text-black text-start mb-3">2023 McLaren Formula 1 Race Car</h6>
+                      <div class="d-flex justify-content-start mb-3">
+                        <img src="assets/home/star.svg" style="width: 15px;">
+                        <img src="assets/home/star.svg" style="width: 15px;">
+                        <img src="assets/home/star.svg" style="width: 15px;">
+                        <img src="assets/home/star.svg" style="width: 15px;">
+                        <img src="assets/home/star.svg" style="width: 15px;">
+                      </div>
+                      <span class="text-start text-black ff-cera-pro-bold mb-3">USD 26.05</span>
+                      <button class="btn-5 text-center">Add to bag</button>
+                    </div>
+                    
+                  </div>
+                  <div class="swiper-slide" style="max-width: 300px;">
+                    <div class="card mb-4" style="border-radius: 0px;">
+                      <div class="card-header bg-white border-bottom-none pt-3">
+                        <button class="btn-hearth d-flex justify-content-center align-items-center">
+                          <ion-icon name="heart-outline" style="color: #1f7ebf !important;"></ion-icon>
+                        </button>
+                      </div>
+                      <div class="card-body h-230px card-img">
+                        <img src="./assets/home/product-3.webp" alt="" class="w-100">
+                      </div>
+                      <div class="card-header bg-white d-flex justify-content-start pb-3">
+                        <span class="badge text-bg-warning">Warning</span>
+                      </div>
+                    </div>
+                    <div class="d-flex flex-column justify-content-start">
+                      <h6 class="fw-900 text-black text-start mb-3">2023 McLaren Formula 1 Race Car</h6>
+                      <div class="d-flex justify-content-start mb-3">
+                        <img src="assets/home/star.svg" style="width: 15px;">
+                        <img src="assets/home/star.svg" style="width: 15px;">
+                        <img src="assets/home/star.svg" style="width: 15px;">
+                        <img src="assets/home/star.svg" style="width: 15px;">
+                        <img src="assets/home/star.svg" style="width: 15px;">
+                      </div>
+                      <span class="text-start text-black ff-cera-pro-bold mb-3">USD 26.05</span>
+                      <button class="btn-5 text-center">Add to bag</button>
+                    </div>
+                    
+                  </div>
+                  <div class="swiper-slide" style="max-width: 300px;">
+                    <div class="card mb-4" style="border-radius: 0px;">
+                      <div class="card-header bg-white border-bottom-none pt-3">
+                        <button class="btn-hearth d-flex justify-content-center align-items-center">
+                          <ion-icon name="heart-outline" style="color: #1f7ebf !important;"></ion-icon>
+                        </button>
+                      </div>
+                      <div class="card-body h-230px card-img">
+                        <img src="./assets/home/product-4.webp" alt="" class="w-100">
+                      </div>
+                      <div class="card-header bg-white d-flex justify-content-start pb-3">
+                        <span class="badge text-bg-warning">Warning</span>
+                      </div>
+                    </div>
+                    <div class="d-flex flex-column justify-content-start">
+                      <h6 class="fw-900 text-black text-start mb-3">2023 McLaren Formula 1 Race Car</h6>
+                      <div class="d-flex justify-content-start mb-3">
+                        <img src="assets/home/star.svg" style="width: 15px;">
+                        <img src="assets/home/star.svg" style="width: 15px;">
+                        <img src="assets/home/star.svg" style="width: 15px;">
+                        <img src="assets/home/star.svg" style="width: 15px;">
+                        <img src="assets/home/star.svg" style="width: 15px;">
+                      </div>
+                      <span class="text-start text-black ff-cera-pro-bold mb-3">USD 26.05</span>
+                      <button class="btn-5 text-center">Add to bag</button>
+                    </div>
+                    
+                  </div>
+                  <div class="swiper-slide" style="max-width: 300px;">
+                    <div class="card mb-4" style="border-radius: 0px;">
+                      <div class="card-header bg-white border-bottom-none pt-3">
+                        <button class="btn-hearth d-flex justify-content-center align-items-center">
+                          <ion-icon name="heart-outline" style="color: #1f7ebf !important;"></ion-icon>
+                        </button>
+                      </div>
+                      <div class="card-body h-230px card-img">
+                        <img src="./assets/home/product-4.webp" alt="" class="w-100">
+                      </div>
+                      <div class="card-header bg-white d-flex justify-content-start pb-3">
+                        <span class="badge text-bg-warning">Warning</span>
+                      </div>
+                    </div>
+                    <div class="d-flex flex-column justify-content-start">
+                      <h6 class="fw-900 text-black text-start mb-3">2023 McLaren Formula 1 Race Car</h6>
+                      <div class="d-flex justify-content-start mb-3">
+                        <img src="assets/home/star.svg" style="width: 15px;">
+                        <img src="assets/home/star.svg" style="width: 15px;">
+                        <img src="assets/home/star.svg" style="width: 15px;">
+                        <img src="assets/home/star.svg" style="width: 15px;">
+                        <img src="assets/home/star.svg" style="width: 15px;">
+                      </div>
+                      <span class="text-start text-black ff-cera-pro-bold mb-3">USD 26.05</span>
+                      <button class="btn-5 text-center">Add to bag</button>
+                    </div>
+                    
+                  </div>
+                </div>
+                <div class="swiper-scrollbar-4" style="height: 5px !important;border-radius: 0px;">
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+      <!-- FOURTH SECTION -->
+      <!-- FIFTH SECTION -->
+      <section class="pb-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12 bg-purple text-white d-flex justify-content-center py-4 gap-4">
+              <h3 class="ff-cera-pro-bold">Discover endless worlds to create</h3>
+              <button class="btn-4">Products</button>
+              <button class="btn-4">About</button>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-6 h-300px d-flex align-items-center px-4 bg-cream">
+              <div> 
+                <h2>Give them endless worlds to build</h2>
+                <p>Watch them Play Unstoppable and inspire their creativity without limits.</p>
+                <button class="btn-3">Shop Now</button>
+              </div>
+            </div>
+            <div class="col-lg-6" style="background-image: url(./assets/home/banner-101.jpg);
+            background-size: cover;
+    background-position: center;">
+
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 bg-purple py-7" style="
+            padding-right: 8rem !important;
+            padding-left: 8rem !important;">
+
+            <h2 class="text-white mb-3 fw-900">Shop by theme</h2>
+            
+              <div class="swiper swiper-container" id="slider5">
+                <div class="swiper-wrapper mb-4">
+                  <div class="swiper-slide" style="max-width: 330px;">
+                    <div class="card border-none bg-transparent text-white">
+                      <img src="./assets/home/block-1.webp" alt="" class="w-100">
+                      <div class="card-body d-flex justify-content-center align-items-center flex-column">
+                        <h5 class="text-center fw-900">Engage in a thrilling galactic chase</h5>
+                        <small class="my-3 text-center">Engage in a thrilling galactic chaseNew LEGO® Star Wars™.</small>
+                        <a class="fw-900 text-white d-flex align-items-center" 
+                        style="text-decoration: none !important;">
+                          <span class="me-2" style="font-size: .9rem !important;">Shop Now</span>
+                          <ion-icon name="chevron-forward-outline" style="font-size: 1.4rem !important;"></ion-icon>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide" style="max-width: 330px;">
+                    <div class="card border-none bg-transparent text-white">
+                      <img src="./assets/home/block-2.webp" alt="" class="w-100">
+                      <div class="card-body d-flex justify-content-center align-items-center flex-column">
+                        <h5 class="text-center fw-900">Engage in a thrilling galactic chase</h5>
+                        <small class="my-3 text-center">Engage in a thrilling galactic chaseNew LEGO® Star Wars™.</small>
+                        <a class="fw-900 text-white d-flex align-items-center" 
+                        style="text-decoration: none !important;">
+                          <span class="me-2" style="font-size: .9rem !important;">Shop Now</span>
+                          <ion-icon name="chevron-forward-outline" style="font-size: 1.4rem !important;"></ion-icon>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide" style="max-width: 330px;">
+                    <div class="card border-none bg-transparent text-white">
+                      <img src="./assets/home/block-3.webp" alt="" class="w-100">
+                      <div class="card-body d-flex justify-content-center align-items-center flex-column">
+                        <h5 class="text-center fw-900">Engage in a thrilling galactic chase</h5>
+                        <small class="my-3 text-center">Engage in a thrilling galactic chaseNew LEGO® Star Wars™.</small>
+                        <a class="fw-900 text-white d-flex align-items-center" 
+                        style="text-decoration: none !important;">
+                          <span class="me-2" style="font-size: .9rem !important;">Shop Now</span>
+                          <ion-icon name="chevron-forward-outline" style="font-size: 1.4rem !important;"></ion-icon>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide" style="max-width: 330px;">
+                    <div class="card border-none bg-transparent text-white">
+                      <img src="./assets/home/block-4.webp" alt="" class="w-100">
+                      <div class="card-body d-flex justify-content-center align-items-center flex-column">
+                        <h5 class="text-center fw-900">Engage in a thrilling galactic chase</h5>
+                        <small class="my-3 text-center">Engage in a thrilling galactic chaseNew LEGO® Star Wars™.</small>
+                        <a class="fw-900 text-white d-flex align-items-center" 
+                        style="text-decoration: none !important;">
+                          <span class="me-2" style="font-size: .9rem !important;">Shop Now</span>
+                          <ion-icon name="chevron-forward-outline" style="font-size: 1.4rem !important;"></ion-icon>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide" style="max-width: 330px;">
+                    <div class="card border-none bg-transparent text-white">
+                      <img src="./assets/home/block-5.webp" alt="" class="w-100">
+                      <div class="card-body d-flex justify-content-center align-items-center flex-column">
+                        <h5 class="text-center fw-900">Engage in a thrilling galactic chase</h5>
+                        <small class="my-3 text-center">Engage in a thrilling galactic chaseNew LEGO® Star Wars™.</small>
+                        <a class="fw-900 d-flex align-items-center text-white" 
+                        style="text-decoration: none !important;">
+                          <span class="me-2" style="font-size: .9rem !important;">Shop Now</span>
+                          <ion-icon name="chevron-forward-outline" style="font-size: 1.4rem !important;"></ion-icon>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-scrollbar-5" style="height: 5px !important;border-radius: 0px;">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-6" style="background-image: url(./assets/home/banner-102.jpeg);
+            background-size: cover;
+    background-position: center;">
+
+            </div>
+            <div class="col-lg-6 h-300px d-flex align-items-center px-4" style="background-color: #fee0c9 !important;">
+              <div> 
+                <h2>Give them endless worlds to build</h2>
+                <p>Watch them Play Unstoppable and inspire their creativity without limits.</p>
+                <button class="btn-3">Shop Now</button>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 px-0">
+              <img src="assets/home/banner-103.webp" class="w-100">
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- FIFTH SECTION -->
+
+      <!-- SIXTH SECTION -->
+      <section class="pb-7">
+        <div class="container">
+          <div class="row" style="background-color: #dad5d5;">
+            <div class="col-12 py-5 text-center" style="padding-right: 10rem !important;
+            padding-left: 10rem !important;">
+              <h3 class="ff-cera-pro-bold">Find inspiration, share your creation</h3>
+              <p>
+                Post your photos to Instagram and mention @LEGO in the caption for a chance to be featured on the website and shop the sets you like below.
+              </p>
+            </div>
+            <div class="col-12 pb-5">
+              <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6 mb-4">
+                  <img src="assets/home/photo-1.jpeg" class="w-100">
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 mb-4">
+                  <img src="assets/home/photo-2.jpeg" class="w-100">
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                  <img src="assets/home/photo-3.jpeg" class="w-100">
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                  <img src="assets/home/photo-4.jpeg" class="w-100">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- SIXTH SECTION -->
+    </main>
+
+    <footer class="py-5" style="background-color: #201d48 !important;">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-lg-3 col-md-12 d-flex flex-column mb-5">
+            <img class="mb-4" src="assets/brand-lego.svg" style="width: 80px;">
+            <button class="mb-4 btn-6">
+              <ion-icon name="location-outline"></ion-icon>
+              United States
+            </button>
+            <ul class="list-inline">
+              <li class="mb-3">
+                <a href="" class="text-white td-none">Gift Cards</a>
+              </li>
+              <li class="mb-3">
+                <a href="" class="text-white td-none">Find inspiration</a>
+              </li>
+              <li class="mb-3">
+                <a href="" class="text-white td-none">LEGO Catalogs</a>
+              </li>
+              <li>
+                <a href="" class="text-white td-none">Find a LEGO Store</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-9 col-md-12 d-none d-lg-block">
+            <div class="row">
+              <div class="col-xl-3 col-lg-6 col-md-6">
+                  <h5 class="text-white ff-cera-pro-bold mb-5">About Us</h5>
+                  <ul class="list-inline">
+                    <li class="mb-3">
+                      <a href="" class="text-white td-none">About the LEGO Group</a>
+                    </li>
+                    <li class="mb-3">
+                      <a href="" class="text-white td-none">LEGO® News</a>
+                    </li>
+                    <li class="mb-3">
+                      <a href="" class="text-white td-none">Sustainability</a>
+                    </li>
+                    <li class="mb-3">
+                      <a href="" class="text-white td-none">Supply Chain Transparency Statement</a>
+                    </li>
+                    <li class="mb-3">
+                      <a href="" class="text-white td-none">LEGO Product Certification</a>
+                    </li>
+                    <li class="mb-3">
+                      <a href="" class="text-white td-none">LEGO Jobs</a>
+                    </li>
+                    <li class="mb-3">
+                      <a href="" class="text-white td-none">LEGO Compliance Line</a>
+                    </li>
+                  </ul>
+              </div>
+              <div class="col-xl-3 col-lg-6 col-md-6">
+                <h5 class="text-white ff-cera-pro-bold mb-5">About Us</h5>
+                <ul class="list-inline">
+                  <li class="mb-3">
+                    <a href="" class="text-white td-none">About the LEGO Group</a>
+                  </li>
+                  <li class="mb-3">
+                    <a href="" class="text-white td-none">LEGO® News</a>
+                  </li>
+                  <li class="mb-3">
+                    <a href="" class="text-white td-none">Sustainability</a>
+                  </li>
+                  <li class="mb-3">
+                    <a href="" class="text-white td-none">Supply Chain Transparency Statement</a>
+                  </li>
+                  <li class="mb-3">
+                    <a href="" class="text-white td-none">LEGO Product Certification</a>
+                  </li>
+                  <li class="mb-3">
+                    <a href="" class="text-white td-none">LEGO Jobs</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-xl-3 col-lg-6 col-md-6">
+                <h5 class="text-white ff-cera-pro-bold mb-5">About Us</h5>
+                <ul class="list-inline">
+                  <li class="mb-3">
+                    <a href="" class="text-white td-none">About the LEGO Group</a>
+                  </li>
+                  <li class="mb-3">
+                    <a href="" class="text-white td-none">LEGO® News</a>
+                  </li>
+                  <li class="mb-3">
+                    <a href="" class="text-white td-none">Sustainability</a>
+                  </li>
+                  
+                </ul>
+              </div>
+              <div class="col-xl-3 col-lg-6 col-md-6">
+                <h5 class="text-white ff-cera-pro-bold mb-5">About Us</h5>
+                <ul class="list-inline">
+                  <li class="mb-3">
+                    <a href="" class="text-white td-none">About the LEGO Group</a>
+                  </li>
+                  <li class="mb-3">
+                    <a href="" class="text-white td-none">LEGO® News</a>
+                  </li>
+                  <li class="mb-3">
+                    <a href="" class="text-white td-none">Sustainability</a>
+                  </li>
+                  <li class="mb-3">
+                    <a href="" class="text-white td-none">Supply Chain Transparency Statement</a>
+                  </li>
+                  <li class="mb-3">
+                    <a href="" class="text-white td-none">LEGO Product Certification</a>
+                  </li>
+                  <li class="mb-3">
+                    <a href="" class="text-white td-none">LEGO Jobs</a>
+                  </li>
+                  <li class="mb-3">
+                    <a href="" class="text-white td-none">LEGO Compliance Line</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-9 col-md-12 d-xs-block d-sm-block d-md-block d-lg-none ">
+            <div class="accordion" id="accordionExample">
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed ff-cera-pro-bold" type="button" style="color: #ffb800 !important;" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    About Us
+                  </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                  <ul class="list-group">
+                    <li class="list-group-item" style="padding-left: 0px !important;">About the LEGO Group</li>
+                    <li class="list-group-item" style="padding-left: 0px !important;">LEGO® News</li>
+                    <li class="list-group-item" style="padding-left: 0px !important;">Sustainability</li>
+                    <li class="list-group-item" style="padding-left: 0px !important;">LEGO Product Certification</li>
+                    <li class="list-group-item" style="padding-left: 0px !important;">LEGO Jobs</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed ff-cera-pro-bold" type="button" style="color: #ffb800 !important;" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    About Us
+                  </button>
+                  
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                  <ul class="list-group">
+                    <li class="list-group-item" style="padding-left: 0px !important;">About the LEGO Group</li>
+                    <li class="list-group-item" style="padding-left: 0px !important;">LEGO® News</li>
+                    <li class="list-group-item" style="padding-left: 0px !important;">Sustainability</li>
+                    <li class="list-group-item" style="padding-left: 0px !important;">LEGO Product Certification</li>
+                    <li class="list-group-item" style="padding-left: 0px !important;">LEGO Jobs</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed ff-cera-pro-bold" style="color: #ffb800 !important;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    About Us
+                  </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                  <ul class="list-group">
+                    <li class="list-group-item" style="padding-left: 0px !important;">About the LEGO Group</li>
+                    <li class="list-group-item" style="padding-left: 0px !important;">LEGO® News</li>
+                    <li class="list-group-item" style="padding-left: 0px !important;">Sustainability</li>
+                    <li class="list-group-item" style="padding-left: 0px !important;">LEGO Product Certification</li>
+                    <li class="list-group-item" style="padding-left: 0px !important;">LEGO Jobs</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex justify-content-between mb-5">
+          <div class="">
+            <label class="text-white ff-cera-pro-bold mb-3" >
+              SUBSCRIBE TO LEGO® SHOP EMAILS
+            </label>
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" placeholder="Recipient's username" 
+              style="border-top-left-radius: 0px;border-bottom-left-radius: 0px;padding: 12px !important;">
+              <span class="input-group-text px-3" id="basic-addon2" style="background-color: #e96f14 !important;border-color: #e96f14 ;">
+                <ion-icon name="chevron-forward-outline"></ion-icon>
+              </span>
+            </div>
+          </div>
+          <div class="">
+            <label class="text-white ff-cera-pro-bold mb-3" >
+              FOLLOW US
+            </label>
+
+            <div class="d-flex">
+              <button class="btn-social">
+                <ion-icon class="text-white" style="font-size: 20px;" name="logo-facebook"></ion-icon>
+              </button>
+              <button class="btn-social">
+                <ion-icon class="text-white" style="font-size: 20px;" name="logo-instagram"></ion-icon>
+              </button>
+              <button class="btn-social">
+                <ion-icon class="text-white" style="font-size: 20px;" name="logo-youtube"></ion-icon>
+              </button>
+              <button class="btn-social">
+                <ion-icon class="text-white" style="font-size: 20px;" name="logo-twitch"></ion-icon>
+              </button>
+            </div>
+            
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12">
+            <ul class="list-inline d-flex gap-4">
+              <li>
+                <a href="" class="text-white">
+                  <small>Privacy Policy</small>
+                </a>
+              </li>
+              <li>
+                <a href="" class="text-white">
+                  <small>Cookies</small>
+                </a>
+              </li>
+              <li>
+                <a href="" class="text-white">
+                  <small>Legal Notice</small>
+                </a>
+              </li>
+              <li>
+                <a href="" class="text-white">
+                  <small>Terms of Use</small>
+                </a>
+              </li>
+              <li>
+                <a href="" class="text-white">
+                  <small>Digital Wellbeing</small>
+                </a>
+              </li>
+              <li>
+                <a href="" class="text-white">
+                  <small>Accessibility</small>
+                </a>
+              </li>
+              <li>
+                <a href="" class="text-white">
+                  <small>Cookie Settings</small>
+                </a>
+              </li>
+              <li>
+                <a href="" class="text-white">
+                  <small>Privacy Settings for residents of CA, VA, CT, UT and CO</small>
+                </a>
+              </li>
+              
+            </ul>
+
+            <small class="text-white">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Exercitationem nihil provident minus iusto eveniet ipsam dolor amet dolorum cum corporis repellendus ducimus aliquam porro, adipisci vero dolores officiis. Veritatis, officiis!
+            </small>
+          </div>
+          <div class="col-lg-12">
+            
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div id="box-shadow"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./app.js"></script>
+</body>
+</html>

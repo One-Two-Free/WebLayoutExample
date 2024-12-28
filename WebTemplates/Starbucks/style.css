@@ -1,0 +1,149 @@
+.navbar-brand img{
+    width: 45px;
+    height: auto;
+}
+
+*{
+    font-family: "SoDoSans-Regular";
+}
+
+@font-face {
+    font-family: "SoDoSans-Light";
+    src: url(./assets/fonts/SoDoSans-Light.ttf);
+}
+
+@font-face {
+    font-family: "SoDoSans-Regular";
+    src: url(./assets/fonts/SoDoSans-Regular.ttf);
+}
+
+@font-face {
+    font-family: "SoDoSans-SemiBold";
+    src: url(./assets/fonts/SoDoSans-SemiBold.ttf);
+}
+
+.ls-1px{
+    letter-spacing: 1px;
+}
+
+button:focus{
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.boxshadow-bottom{
+    box-shadow: 
+        0 1px 3px rgb(0,0,0,.1),
+        0 2px 2px rgb(0,0,0,.06),
+        0 0px 2px rgb(0,0,0,.07);
+}
+
+.p-2{
+    padding: 2rem !important;
+}
+
+.ff-SoDoSans-SemiBold{
+    font-family: "SoDoSans-SemiBold" !important;
+}
+
+.fs-90{
+    font-size: .90rem !important;
+}
+
+.text-decoration-none{
+    text-decoration: none;
+}
+
+.fs-1-3{
+    font-size: 1.3rem !important;
+}
+
+.fs-2-5{
+    font-size: 2.5rem !important;
+}
+
+.nav-link-sb{
+    text-decoration: none !important;
+}
+
+.nav-link-sb ion-icon {
+    font-size: 1.4rem;
+    color: #1f2021;
+    margin-right: 5px;
+}
+
+.nav-link-sb span{
+    color: #1f2021;
+}
+
+.nav-link-sb:hover span{
+    color: #006241 !important;
+}
+
+.nav-link-sb:hover ion-icon{
+    color: #006241 !important;
+}
+
+.btn-white{
+    border: 1px solid #000;
+    border-radius: 2rem;
+    padding: 3px 18px;
+    font-size: .9rem;
+    background-color: white;
+}
+
+.btn-white:hover{
+    background-color: #f1f1f1;
+}
+
+.btn-dark{
+    border: 1px solid #000;
+    border-radius: 2rem;
+    padding: 3px 18px;
+    font-size: .9rem;
+    background-color: rgb(0, 0, 0);
+    color: white;
+}
+
+.btn-dark:hover{
+    background-color: #494949;
+}
+
+.text-green-hover:hover{
+    color: #006241 !important;
+}
+
+.card-sb{
+    padding: 3rem;
+}
+
+.text-green{
+    color: #102a14 !important;
+}
+
+.link-social{
+    padding: 5px;
+    background-color: #006241;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+
+.link-social ion-icon{
+    color: white;
+    font-size: 1.3rem;
+    margin-top: 6px;
+}
+
+.img-producto{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+}
+
+.sub-bar{
+    background-color: #006241;
+    color: white;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
